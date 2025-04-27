@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" async></script> <!-- tailwind css library loaded with async -->
   <style>
+    /* Move the blobs around */
     @keyframes aurora-move {
       to {
         background-position:
-          100% 100%,
-          0%   100%,
-          0%   0%,
-          100% 0%,
-          50%  0%,
-          50% 100%;
+          100% 100%,  /* cyan → bottom‐right */
+          0%   100%,  /* yellow → bottom‐left */
+          0%   0%,    /* green → top‐left */
+          100% 0%,    /* purple → top‐right */
+          50%  0%,    /* white → top‐center */
+          50% 100%;   /* orange → bottom‐center */
       }
     }
 
     .aurora-text {
+      /* six “blobs”: cyan, yellow, green, purple, white, orange */
       background-image:
         radial-gradient(circle at 20% 20%, #06f0fa 25%, transparent 70%),
         radial-gradient(circle at 80% 30%, #ffee40 25%, transparent 70%),
@@ -28,26 +30,31 @@
       
       background-size: 200% 200%;
       background-position:
-        0%   0%,
-        100% 0%,
-        100% 100%,
-        0%   100%,
-        50%  50%,
-        50%  50%;
+        0%   0%,     /* cyan start top‐left */
+        100% 0%,     /* yellow start top‐right */
+        100% 100%,   /* green start bottom‐right */
+        0%   100%,   /* purple start bottom‐left */
+        50%  50%,    /* white start center */
+        50%  50%;    /* orange start center */
       animation: aurora-move 1.3s ease-in-out infinite alternate;
 
+      /* clip the colors to the text shape */
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-align: center;
       font-size: 100px;
+      
     }
+
+    .aurora-text {
+  text-align: center;
+}
   </style>
-  <title>Aurora Animated Gradient Text</title>
+  <title>Aurora Text Effect</title>
 </head>
 <body class="bg-black flex items-center justify-center min-h-screen">
   <h1 class="aurora-text font-extrabold text-[clamp(3rem,8vw,7rem)] tracking-tight">
-    AURORA
+    Aurora
   </h1>
 </body>
 </html>
