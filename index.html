@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes aurora-move {
+      to {
+        background-position:
+          100% 100%,
+          0%   100%,
+          0%   0%,
+          100% 0%,
+          50%  0%,
+          50% 100%;
+      }
+    }
+
+    .aurora-text {
+      background-image:
+        radial-gradient(circle at 20% 20%, #06f0fa 25%, transparent 70%),
+        radial-gradient(circle at 80% 30%, #ffee40 25%, transparent 70%),
+        radial-gradient(circle at 50% 80%, #4af56f 25%, transparent 70%),
+        radial-gradient(circle at 10% 80%, #d556ff 25%, transparent 70%),
+        radial-gradient(circle at 50% 10%, #ffffff 30%, transparent 70%),
+        radial-gradient(circle at 50% 90%, #ff7f00 30%, transparent 70%);
+      
+      background-size: 200% 200%;
+      background-position:
+        0%   0%,
+        100% 0%,
+        100% 100%,
+        0%   100%,
+        50%  50%,
+        50%  50%;
+      animation: aurora-move 1.3s ease-in-out infinite alternate;
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-align: center;
+      font-size: 100px;
+    }
+  </style>
+  <title>Aurora Animated Gradient Text</title>
+</head>
+<body class="bg-black flex items-center justify-center min-h-screen">
+  <h1 class="aurora-text font-extrabold text-[clamp(3rem,8vw,7rem)] tracking-tight">
+    AURORA
+  </h1>
+</body>
+</html>
