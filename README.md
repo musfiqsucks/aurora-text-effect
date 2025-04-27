@@ -29,5 +29,5 @@ animation: aurora-move 1.3s ease-in-out infinite alternate;
 ```
 
 ## 👩‍💻 Author & License
-- Author: Your Name
+- Author: Musfiqur Rahman (Uday)
 - License: MIT
